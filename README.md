@@ -38,7 +38,7 @@ Para agregar elementos a tu diseño:
 3. Usa las teclas de flecha para movimientos precisos
 
 ### Transformación
-![Transformación de elementos](https://via.placeholder.com/400x300/06b6d4/ffffff?text=Transformación)
+![Transformación de elementos]
 
 - **Redimensionamiento**: Arrastra las manijas cuadradas en los bordes
 - **Rotación**: Usa la manija circular superior
@@ -49,14 +49,14 @@ La barra de herramientas superior incluye:
 
 | Icono | Nombre | Función |
 |-------|--------|---------|
-| ![Seleccionar](https://via.placeholder.com/30/ffffff/4f46e5?text=S) | Seleccionar | Seleccionar elementos |
-| ![Mover](https://via.placeholder.com/30/ffffff/4f46e5?text=M) | Mover | Activar modo de movimiento |
-| ![Texto](https://via.placeholder.com/30/ffffff/4f46e5?text=T) | Texto | Insertar elementos de texto |
-| ![Formas](https://via.placeholder.com/30/ffffff/4f46e5?text=F) | Formas | Insertar formas básicas |
-| ![Imagen](https://via.placeholder.com/30/ffffff/4f46e5?text=I) | Imagen | Insertar imágenes |
-| ![Capas](https://via.placeholder.com/30/ffffff/4f46e5?text=C) | Capas | Administrar capas |
-| ![Deshacer](https://via.placeholder.com/30/ffffff/4f46e5?text=D) | Deshacer | Revertir última acción |
-| ![Rehacer](https://via.placeholder.com/30/ffffff/4f46e5?text=R) | Rehacer | Rehacer acción revertida |
+| ![Seleccionar] | Seleccionar | Seleccionar elementos |
+| ![Mover] | Mover | Activar modo de movimiento |
+| ![Texto] | Texto | Insertar elementos de texto |
+| ![Formas] | Formas | Insertar formas básicas |
+| ![Imagen] | Imagen | Insertar imágenes |
+| ![Capas] | Capas | Administrar capas |
+| ![Deshacer] | Deshacer | Revertir última acción |
+| ![Rehacer]| Rehacer | Rehacer acción revertida |
 
 ## 5. Propiedades y Estilos
 El panel derecho te permite ajustar propiedades de elementos seleccionados:
