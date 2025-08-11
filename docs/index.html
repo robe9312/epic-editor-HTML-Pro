@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Editor HTML Pro</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header" role="banner">
+      <div class="logo">
+        <div class="logo-icon" aria-hidden="true">E</div>
+        <div class="logo-text">Editor HTML Pro</div>
+      </div>
+
+      <div class="header-controls">
+        <button class="btn" id="new-project" aria-label="Nuevo proyecto">
+          <i class="fas fa-file" aria-hidden="true"></i> Nuevo
+        </button>
+        <button class="btn" id="open-project" aria-label="Abrir proyecto">
+          <i class="fas fa-folder-open" aria-hidden="true"></i> Abrir
+        </button>
+        <button class="btn btn-success" id="save-project" aria-label="Guardar proyecto">
+          <i class="fas fa-save" aria-hidden="true"></i> Guardar
+        </button>
+        <button class="btn btn-primary" id="export-project" aria-label="Exportar proyecto">
+          <i class="fas fa-file-export" aria-hidden="true"></i> Exportar
+        </button>
+      </div>
+    </header>
+
+    <aside class="sidebar" role="complementary">
+      <section class="panel" aria-labelledby="elements-title">
+        <h3 class="panel-title" id="elements-title"><i class="fas fa-shapes" aria-hidden="true"></i> Elementos</h3>
+        <div class="elements-grid">
+          <div class="element-card" data-type="text" role="button" tabindex="0">
+            <div class="element-icon"><i class="fas fa-heading" aria-hidden="true"></i></div>
+            <div>Texto</div>
+          </div>
+          <div class="element-card" data-type="button" role="button" tabindex="0">
+            <div class="element-icon"><i class="fas fa-hand-pointer" aria-hidden="true"></i></div>
+            <div>Botón</div>
+          </div>
+          <div class="element-card" data-type="image" role="button" tabindex="0">
+            <div class="element-icon"><i class="fas fa-image" aria-hidden="true"></i></div>
+            <div>Imagen</div>
+          </div>
+          <div class="element-card" data-type="div" role="button" tabindex="0">
+            <div class="element-icon"><i class="fas fa-square" aria-hidden="true"></i></div>
+            <div>Contenedor</div>
+          </div>
+          <div class="element-card" data-type="form" role="button" tabindex="0">
+            <div class="element-icon"><i class="fas fa-list" aria-hidden="true"></i></div>
+            <div>Formulario</div>
+          </div>
+          <div class="element-card" data-type="icon" role="button" tabindex="0">
+            <div class="element-icon"><i class="fas fa-icons" aria-hidden="true"></i></div>
+            <div>Icono</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="templates-title">
+        <h3 class="panel-title" id="templates-title"><i class="fas fa-clone" aria-hidden="true"></i> Plantillas</h3>
+        <div class="elements-grid">
+          <div class="element-card" data-template="home" role="button" tabindex="0">
+            <div class="element-icon"><i class="fas fa-home" aria-hidden="true"></i></div>
+            <div>Inicio</div>
+          </div>
+          <div class="element-card" data-template="blog" role="button" tabindex="0">
+            <div class="element-icon"><i class="fas fa-blog" aria-hidden="true"></i></div>
+            <div>Blog</div>
+          </div>
+          <div class="element-card" data-template="shop" role="button" tabindex="0">
+            <div class="element-icon"><i class="fas fa-shopping-cart" aria-hidden="true"></i></div>
+            <div>Tienda</div>
+          </div>
+          <div class="element-card" data-template="profile" role="button" tabindex="0">
+            <div class="element-icon"><i class="fas fa-user" aria-hidden="true"></i></div>
+            <div>Perfil</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel components-panel" aria-labelledby="components-title">
+        <h3 class="panel-title" id="components-title"><i class="fas fa-cubes" aria-hidden="true"></i> Componentes</h3>
+        <div class="components-grid">
+          <div class="component-card" data-component="navbar" role="button" tabindex="0">Navbar</div>
+          <div class="component-card" data-component="card" role="button" tabindex="0">Card</div>
+          <div class="component-card" data-component="footer" role="button" tabindex="0">Footer</div>
+          <div class="component-card" data-component="testimonial" role="button" tabindex="0">Testimonial</div>
+          <div class="component-card" data-component="pricing" role="button" tabindex="0">Precios</div>
+          <div class="component-card" data-component="cta" role="button" tabindex="0">CTA</div>
+        </div>
+      </section>
+    </aside>
+
+    <main class="main-content" role="main">
+      <div class="canvas-toolbar" role="toolbar" aria-label="Herramientas de edición">
+        <button class="tool-btn active" title="Seleccionar" data-tool="select" aria-pressed="true">
+          <i class="fas fa-mouse-pointer" aria-hidden="true"></i>
+          <span class="sr-only">Seleccionar</span>
+        </button>
+        <button class="tool-btn" title="Mover" data-tool="move" aria-pressed="false">
+          <i class="fas fa-arrows-alt" aria-hidden="true"></i>
+          <span class="sr-only">Mover</span>
+        </button>
+        <button class="tool-btn" title="Texto" data-tool="text" aria-pressed="false">
+          <i class="fas fa-font" aria-hidden="true"></i>
+          <span class="sr-only">Texto</span>
+        </button>
+        <button class="tool-btn" title="Formas" data-tool="shape" aria-pressed="false">
+          <i class="fas fa-shapes" aria-hidden="true"></i>
+          <span class="sr-only">Formas</span>
+        </button>
+        <button class="tool-btn" title="Imagen" data-tool="image" aria-pressed="false">
+          <i class="fas fa-image" aria-hidden="true"></i>
+          <span class="sr-only">Imagen</span>
+        </button>
+        <button class="tool-btn" title="Capa" data-tool="layer" aria-pressed="false">
+          <i class="fas fa-layer-group" aria-hidden="true"></i>
+          <span class="sr-only">Capa</span>
+        </button>
+
+        <div style="flex: 1;"></div>
+
+        <button class="tool-btn" title="Deshacer" id="undo-btn" aria-label="Deshacer">
+          <i class="fas fa-undo" aria-hidden="true"></i>
+        </button>
+        <button class="tool-btn" title="Rehacer" id="redo-btn" aria-label="Rehacer">
+          <i class="fas fa-redo" aria-hidden="true"></i>
+        </button>
+        <button class="tool-btn" title="Vista previa" id="preview-btn" aria-label="Vista previa">
+          <i class="fas fa-eye" aria-hidden="true"></i>
+        </button>
+        <button class="tool-btn" title="Responsive" id="responsive-btn" aria-label="Modo responsive">
+          <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+        </button>
+        <button class="tool-btn" title="Configuración" id="settings-btn" aria-label="Configuración">
+          <i class="fas fa-cog" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="canvas-container" aria-label="Área de diseño">
+        <div id="stage">
+          <div class="ruler-horizontal" id="ruler-horizontal">
+            <!-- Units will be added dynamically -->
+          </div>
+          <div class="ruler-vertical" id="ruler-vertical">
+            <!-- Units will be added dynamically -->
+          </div>
+          <div class="canvas-grid"></div>
+          <div class="artboard" id="artboard" role="application">
+            <!-- Los elementos se añadirán aquí -->
+          </div>
+          <div class="zoom-controls">
+            <button class="zoom-btn" id="zoom-out" title="Zoom Out">
+              <i class="fas fa-search-minus"></i>
+            </button>
+            <button class="zoom-btn" id="zoom-reset" title="Reset Zoom">
+              <i class="fas fa-search"></i>
+            </button>
+            <button class="zoom-btn" id="zoom-in" title="Zoom In">
+              <i class="fas fa-search-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <aside class="inspector" role="complementary" aria-label="Panel de propiedades">
+      <section class="panel" aria-labelledby="properties-title">
+        <h3 class="panel-title" id="properties-title"><i class="fas fa-sliders-h" aria-hidden="true"></i> Propiedades</h3>
+
+        <div class="prop-group">
+          <label class="prop-label" for="prop-x">Posición y tamaño</label>
+          <div class="properties-grid">
+            <input type="number" class="prop-input" id="prop-x" placeholder="X" aria-label="Posición X">
+            <input type="number" class="prop-input" id="prop-y" placeholder="Y" aria-label="Posición Y">
+            <input type="number" class="prop-input" id="prop-width" placeholder="Ancho" aria-label="Ancho">
+            <input type="number" class="prop-input" id="prop-height" placeholder="Alto" aria-label="Alto">
+          </div>
+        </div>
+
+        <div class="prop-group">
+          <label class="prop-label" for="prop-color">Estilo</label>
+          <div class="properties-grid">
+            <input type="color" class="prop-input color-picker" id="prop-color" value="#4f46e5" aria-label="Color de texto">
+            <input type="color" class="prop-input color-picker" id="prop-bg" value="#ffffff" aria-label="Color de fondo">
+            <select class="prop-input" id="prop-font" aria-label="Fuente">
+              <option>Fuente predeterminada</option>
+              <option>Arial</option>
+              <option>Roboto</option>
+              <option>Open Sans</option>
+            </select>
+            <input type="number" class="prop-input" id="prop-fontsize" placeholder="Tamaño" value="16" aria-label="Tamaño de fuente">
+          </div>
+        </div>
+
+        <div class="prop-group">
+          <label class="prop-label" for="prop-bg-type">Fondo</label>
+          <select class="prop-input" id="prop-bg-type" aria-label="Tipo de fondo">
+            <option>Color sólido</option>
+            <option>Degradado</option>
+            <option>Imagen</option>
+          </select>
+          <div class="gradient-preview" id="gradient-preview" style="background: linear-gradient(90deg, #4f46e5, #06b6d4);"></div>
+        </div>
+
+        <div class="prop-group">
+          <label class="prop-label" for="prop-shadow">Efectos</label>
+          <div class="properties-grid">
+            <input type="range" class="prop-input" id="prop-shadow" min="0" max="20" value="0" aria-label="Sombra">
+            <input type="number" class="prop-input" id="prop-shadow-value" placeholder="Sombra" value="0" aria-label="Valor de sombra">
+            <input type="range" class="prop-input" id="prop-opacity" min="0" max="100" value="100" aria-label="Opacidad">
+            <input type="number" class="prop-input" id="prop-opacity-value" placeholder="Opacidad" value="100" aria-label="Valor de opacidad">
+          </div>
+        </div>
+
+        <div class="properties-grid">
+          <button class="btn" id="apply-props" aria-label="Aplicar propiedades">
+            <i class="fas fa-check" aria-hidden="true"></i> Aplicar
+          </button>
+          <button class="btn btn-danger" id="delete-element" aria-label="Eliminar elemento seleccionado">
+            <i class="fas fa-trash" aria-hidden="true"></i> Eliminar
+          </button>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="layers-title">
+        <h3 class="panel-title" id="layers-title"><i class="fas fa-layer-group" aria-hidden="true"></i> Capas</h3>
+        <div class="layers-list" id="layers-list" role="list">
+          <!-- Las capas se generarán dinámicamente -->
+        </div>
+        <div class="properties-grid" style="margin-top: 10px;">
+          <button class="btn" id="layer-up" aria-label="Subir capa">
+            <i class="fas fa-arrow-up" aria-hidden="true"></i> Subir
+          </button>
+          <button class="btn" id="layer-down" aria-label="Bajar capa">
+            <i class="fas fa-arrow-down" aria-hidden="true"></i> Bajar
+          </button>
+          <button class="btn" id="layer-group" aria-label="Agrupar capas">
+            <i class="fas fa-object-group" aria-hidden="true"></i> Agrupar
+          </button>
+          <button class="btn" id="layer-ungroup" aria-label="Desagrupar capas">
+            <i class="fas fa-object-ungroup" aria-hidden="true"></i> Desagrupar
+          </button>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="export-title">
+        <h3 class="panel-title" id="export-title"><i class="fas fa-download" aria-hidden="true"></i> Exportar</h3>
+        <div class="properties-grid">
+          <button class="btn" id="export-html" aria-label="Exportar como HTML">
+            <i class="fab fa-html5" aria-hidden="true"></i> HTML
+          </button>
+          <button class="btn" id="export-css" aria-label="Exportar como CSS">
+            <i class="fab fa-css3" aria-hidden="true"></i> CSS
+          </button>
+          <button class="btn" id="export-png" aria-label="Exportar como PNG">
+            <i class="fas fa-image" aria-hidden="true"></i> PNG
+          </button>
+          <button class="btn" id="export-pdf" aria-label="Exportar como PDF">
+            <i class="fas fa-file-pdf" aria-hidden="true"></i> PDF
+          </button>
+        </div>
+      </section>
+    </aside>
+
+    <footer class="app-footer" role="contentinfo">
+      <div>Editor HTML Pro v2.1 - Experiencia Illustrator</div>
+      <div class="status-bar">
+        <span id="status-mode">Modo: Edición</span>
+        <span id="status-selection">Selección: Ninguna</span>
+        <span id="status-position">Posición: 0x0</span>
+        <span id="status-zoom">Zoom: 100%</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Modal para exportación -->
+  <div class="modal" id="export-modal" role="dialog" aria-modal="true" aria-labelledby="export-modal-title">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="export-modal-title">
+          <i class="fas fa-file-export" aria-hidden="true"></i> Exportar Proyecto
+        </h2>
+        <button class="modal-close" id="export-cancel" aria-label="Cerrar">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="prop-group">
+          <label class="prop-label" for="export-filename">Nombre del archivo:</label>
+          <input type="text" id="export-filename" class="prop-input" value="mi-proyecto">
+        </div>
+        <div class="prop-group">
+          <label class="prop-label" for="export-format">Formato:</label>
+          <select id="export-format" class="prop-input">
+            <option value="html">HTML Completo</option>
+            <option value="html-css">HTML + CSS</option>
+            <option value="react">Componente React</option>
+            <option value="vue">Componente Vue</option>
+          </select>
+        </div>
+        <div class="prop-group" id="quality-control" style="display: none;">
+          <label class="prop-label" for="export-quality">Calidad:</label>
+          <input type="range" id="export-quality" class="prop-input" min="1" max="10" value="8">
+          <span id="quality-value">80%</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="export-confirm" class="btn btn-primary">
+          <i class="fas fa-download" aria-hidden="true"></i> Exportar
+        </button>
+        <button id="export-cancel-btn" class="btn btn-danger">
+          <i class="fas fa-times" aria-hidden="true"></i> Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notificación flotante -->
+  <div class="notification" id="notification" aria-live="polite"></div>
+
+  <!-- Context Menu -->
+  <div class="context-menu" id="context-menu">
+    <button class="context-item" id="context-cut">
+      <i class="fas fa-cut"></i> Cortar
+    </button>
+    <button class="context-item" id="context-copy">
+      <i class="fas fa-copy"></i> Copiar
+    </button>
+    <button class="context-item" id="context-paste">
+      <i class="fas fa-paste"></i> Pegar
+    </button>
+    <div class="context-divider"></div>
+    <button class="context-item" id="context-duplicate">
+      <i class="fas fa-clone"></i> Duplicar
+    </button>
+    <button class="context-item" id="context-group">
+      <i class="fas fa-object-group"></i> Agrupar
+    </button>
+    <button class="context-item" id="context-ungroup">
+      <i class="fas fa-object-ungroup"></i> Desagrupar
+    </button>
+    <div class="context-divider"></div>
+    <button class="context-item" id="context-bring-forward">
+      <i class="fas fa-arrow-up"></i> Traer al frente
+    </button>
+    <button class="context-item" id="context-send-backward">
+      <i class="fas fa-arrow-down"></i> Enviar atrás
+    </button>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
